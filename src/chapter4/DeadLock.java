@@ -12,10 +12,10 @@ public class DeadLock extends Thread {
         this.tool = object;
 
         if (tool == fork1) {
-            this.setName("哲学家A");
+            this.setName("Philosopher A");
         }
         if (tool == fork2) {
-            this.setName("哲学家B");
+            this.setName("Philosopher B");
         }
     }
 
@@ -29,7 +29,7 @@ public class DeadLock extends Thread {
                 }
 
                 synchronized (fork2) {
-                    System.out.println("哲学家A开始吃饭了");
+                    System.out.println("Philosopher A is eating now.");
                 }
             }
         }
@@ -42,7 +42,7 @@ public class DeadLock extends Thread {
                 }
 
                 synchronized (fork1) {
-                    System.out.println("哲学家B开始吃饭了");
+                    System.out.println("Philosopher B is eating now.");
                 }
             }
         }
@@ -50,11 +50,11 @@ public class DeadLock extends Thread {
 
 
     public static void main(String args[]) throws InterruptedException {
-        DeadLock 哲学家A = new DeadLock(fork1);
-        DeadLock 哲学家B = new DeadLock(fork2);
+        DeadLock philosopherA = new DeadLock(fork1);
+        DeadLock philosopherB = new DeadLock(fork2);
 
-        哲学家A.start();
-        哲学家B.start();
+        philosopherA.start();
+        philosopherB.start();
 
         Thread.sleep(1000);
     }

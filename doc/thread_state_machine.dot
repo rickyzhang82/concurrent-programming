@@ -1,0 +1,11 @@
+digraph G {
+label="Java Thread State Machine Diagram";
+NEW -> RUNNABLE [label="start()"];
+RUNNABLE -> BLOCKED [label="synchronized block locks"];
+BLOCKED -> RUNNABLE [label="synchronized block releases"];
+RUNNABLE -> WAITING [label="wait()"];
+WAITING -> RUNNABLE [label="notify()"];
+RUNNABLE -> TIMED_WAITING [label="wait()"];
+TIMED_WAITING -> RUNNABLE [label="notify()"];
+RUNNABLE -> TERMINATED [label="finish execution"];
+}

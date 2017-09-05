@@ -23,6 +23,6 @@ public class InterruptThread {
 
         thread.start();
         Thread.sleep(2000);
-        thread.interrupt();//进行中断操作,但是此操作没有任何影响
+        thread.interrupt();
     }
 }

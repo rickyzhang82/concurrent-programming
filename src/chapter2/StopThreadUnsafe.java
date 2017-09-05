@@ -7,6 +7,11 @@ public class StopThreadUnsafe {
 
     public static User user = new User();
 
+    /**
+     * Data Object
+     * @author rizhan
+     *
+     */
     public static class User {
         private int id;
         private String name;
@@ -80,6 +85,9 @@ public class StopThreadUnsafe {
             Thread thread = new ChangeObjectThread();
             thread.start();
             Thread.sleep(150);
+            /**
+             * Stopping ChangeObjectThread thread may cause inconsistent state of user object. Id and Name may be not the same.
+             */
             thread.stop();
         }
     }

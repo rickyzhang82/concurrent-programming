@@ -1,7 +1,7 @@
 package chapter1;
 
 /**
- * Created by 13 on 2017/5/4.
+ * This won't work in 64bit JVM. But in 32bit JVM when reading and writing 64bit long is **NOT** atomic. You may see the printing.
  */
 public class MultiThreadLong {
     public static long t = 0;

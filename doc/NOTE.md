@@ -13,6 +13,7 @@ Table of Contents
 
 ## Java thread state
 ![Thread State Machine](thread_state_machine.png)
+
 Compared to WAITING, TIMED_WAITING means wait for a period of time.
 
 

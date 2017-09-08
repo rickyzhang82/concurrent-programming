@@ -29,11 +29,12 @@ See example `CreateThread.java`.
 
 
 ## Stop a thread
-Don't call `stop()` method in thread object. It may force releasing lock in an unexpected way that causes inconsistent state of object. It may also cause resource leak. See example `StopThreadUnsafe.java`.
+Don't call `stop()` method in the thread object. It may force releasing lock in an unexpected way that causes inconsistent state of object. It may also cause resource leak. See example `StopThreadUnsafe.java`.
 
 
 ## Interrupt a thread
-Notify a thread from outside to exit. It is up to thread determine how and when to exit.
+Notify a thread to terminate from outside. It is up to thread determine how and when to terminate execution.
+
 ```Java
 void interrupt() // set interrupt flag
 boolean isInterrupted() // check if interrupt flag is set
